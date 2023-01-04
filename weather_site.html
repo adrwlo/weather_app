@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="weather_container">
+
+        <div class="notification_container inactive">
+            <h3>No such city was found!</h3>
+        </div>
+
+        <div class="menu_container">
+            <div class="menu_search" >
+                <input type="text" class="search_input inactive" placeholder="e. g. Warszawa">
+                <button class="search_btn_for_input inactive">
+                    <img src="images/menu_icons/search_icon (2).png" alt="">
+                </button>
+            </div>
+            <div class="menu_btns">
+                <button class="search_btn">
+                    <img src="images/menu_icons/search_icon.png" alt="">
+                </button>  
+                <button class="donate_btn">
+                    <img src="images/menu_icons/donate_icon.png" alt="">
+                </button>
+                <button class="flag_btn">
+                    <img src="images/menu_icons/flag_icon.png" alt="">
+                </button>
+            </div>
+        </div>
+        
+        <div class="first_part_container">
+            <div class="clock_container">
+                <h1 class="clock"></h1>
+            </div>
+            <div class="place_date_container">
+                <!-- <h3 class="place">Warszawa</h3>
+                <p class="date">Monday, 12.12.2022</p> -->
+            </div>
+        </div>
+
+        <div class="second_part_container">
+            <div class="basic_weather">
+                <!-- <div class="icon_weather">
+                    <img src="broken_clouds" alt="" class="icon">
+                    <p class="icon_desc">snow</p>
+                </div>
+                <div class="deegres_celsius_container">
+                    <h1 class="deegres_celsius">-4°</h1>
+                </div> -->
+            </div>
+
+            <div class="extended_weather">
+                <!-- <table class="extended_weather_table">
+                    <tr>
+                        <td> 
+                            <img src="images/extended_icons/feels_like_temp.png" alt="">
+                            <p class="fells_like_temp">-65°</p>
+                        </td>
+                        <td>
+                            <img src="images/extended_icons/wind_speed.png" alt="">
+                            <p class="wind_speed">25 km/h</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/extended_icons/max_temp.png" alt="">
+                            <p class="max_temp">-6°</p>
+                        </td>
+                      <td>
+                            <img src="images/extended_icons/rain.png" alt="">
+                            <p class="rain">20%</p>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/extended_icons/min_temp.png" alt="">
+                            <p class="min_temp">-6°</p>
+                        </td>
+                        <td>
+                            <img src="images/extended_icons/cloud.png" alt="">
+                            <p class="cloud">20%</p>
+                        </td>
+                      </tr>
+                </table>
+                <div class="temp_stats_mobile_container">
+                    <div class="fells_like_mobile_container">
+                        <img src="images/extended_icons/feels_like_temp.png" alt="">
+                        <p class="fells_like_temp">-65°</p>
+                    </div>
+                    <div class="max_temp_mobile_container">
+                        <img src="images/extended_icons/max_temp.png" alt="">
+                        <p class="max_temp">-6°</p>
+                    </div>
+                    <div class="min_temp_mobile_container">
+                        <img src="images/extended_icons/min_temp.png" alt="">
+                        <p class="min_temp">-6°</p>
+                    </div>
+                </div>
+                <div class="different_stats_mobile_container">
+                    <div class="rain_mobile_container">
+                        <img src="images/extended_icons/rain.png" alt="">
+                        <p class="rain">20%</p>
+                    </div>
+                    <div class="cloud_mobile_container">
+                        <img src="images/extended_icons/cloud.png" alt="">
+                        <p class="cloud">20%</p>
+                    </div>
+                    <div class="wind_speed_mobile_container">
+                        <img src="images/extended_icons/wind_speed.png" alt="">
+                        <p class="wind_speed">25 km/h</p>
+                    </div>
+                </div> -->
+            </div>
+  
+       </div>
+
+        <div class="forecast_btn">
+            <img src="images/menu_icons/arrow_btn.png" alt="">
+            <p>show weather forecast</p>
+            <img src="images/menu_icons/arrow_btn.png" alt="">
+        </div>
+    
+        <div class="forecast_container inactive">
+
+            <!-- <div class="forecast_day">
+                <h4>Tuesday</h4>
+                <img src="images/icons/snow.png" alt="">
+                <p class="forecast_desc">snow</p>
+                <span class="temp_stats_container">
+                    <img src="images/extended_icons/max_temp.png" alt="">
+                    <p>-6 C / -10 C</p>
+                </span>
+                <span class="rain_container">
+                    <img src="images/extended_icons/rain.png" alt="">
+                    <p>90%</p>
+                </span>
+        </div>
+        
+        <div class="forecast_day">
+                <h4>Tuesday</h4>
+                <img src="images/icons/snow.png" alt="">
+                <p class="forecast_desc">snow</p>
+                <span class="temp_stats_container">
+                    <img src="images/extended_icons/max_temp.png" alt="">
+                    <p>-6 C / -10 C</p>
+                </span>
+                <span class="rain_container">
+                    <img src="images/extended_icons/rain.png" alt="">
+                    <p>90%</p>
+                </span>
+            </div>
+
+            <div class="forecast_day">
+                <h4>Tuesday</h4>
+                <img src="images/icons/snow.png" alt="">
+                <p class="forecast_desc">snow</p>
+                <span class="temp_stats_container">
+                    <img src="images/extended_icons/max_temp.png" alt="">
+                    <p>-6 C / -10 C</p>
+                </span>
+                <span class="rain_container">
+                    <img src="images/extended_icons/rain.png" alt="">
+                    <p>90%</p>
+                </span>
+            </div>
+
+            <div class="forecast_day">
+                <h4>Tuesday</h4>
+                <img src="images/icons/snow.png" alt="">
+                <p class="forecast_desc">snow</p>
+                <span class="temp_stats_container">
+                    <img src="images/extended_icons/max_temp.png" alt="">
+                    <p>-6 C / -10 C</p>
+                </span>
+                <span class="rain_container">
+                    <img src="images/extended_icons/rain.png" alt="">
+                    <p>90%</p>
+                </span>
+            </div>
+
+            <div class="forecast_day">
+                <h4>Tuesday</h4>
+                <img src="images/icons/snow.png" alt="">
+                <p class="forecast_desc">snow</p>
+                <span class="temp_stats_container">
+                    <img src="images/extended_icons/max_temp.png" alt="">
+                    <p>-6 C / -10 C</p>
+                </span>
+                <span class="rain_container">
+                    <img src="images/extended_icons/rain.png" alt="">
+                    <p>90%</p>
+                </span>
+            </div> -->
+
+
+        </div>
+   
+    <script src="script2.js"></script>
+</body>
+</html>

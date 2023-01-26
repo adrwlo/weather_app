@@ -1,5 +1,6 @@
 :root {
     --font_color: #ffff;
+    --placeholder: #383838;
 }
 
 * {
@@ -132,15 +133,13 @@ body {
     border-radius: 20px;
     font-size: 40px;
     color: var(--font_color);
-    padding-left: 200px;
+    padding-left: 50px;
     border: none;
 }
 
-.search_weather_container input:placeholder-shown{
+.search_weather_container input::placeholder{
     font-size: 40px;
-    color: var(--font_color);
-    padding-left: 200px;
-
+    color: var(--placeholder);
 }
 
 .search_weather_container input:focus {
@@ -151,7 +150,7 @@ body {
     width: 97px;
     height: 44px;
     position: absolute;
-    right: 200px;
+    right: 150px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -251,19 +250,18 @@ body {
         width: 600px;
         height: 50.25px;
         font-size: 30px;
-        padding-left: 150px;
+        padding-left: 40px;
     }
 
-    .search_weather_container input:placeholder-shown{
+    .search_weather_container input::placeholder{
         font-size: 30px;
-        padding-left: 150px;
     }
 
     .search_weather_container .search_welcome_btn{
         width: 72.75px;
         height: 33px;
         position: absolute;
-        right: 150px;
+        right: 130px;
     }
 
     .footer p {
@@ -345,12 +343,11 @@ body {
         width: 400px;
         height: 38px;
         font-size: 22.5px;
-        padding-left: 100px;
+        padding-left: 30px;
     }
 
-    .search_weather_container input:placeholder-shown{
+    .search_weather_container input::placeholder{
         font-size: 22.5px;
-        padding-left: 100px;
     }
 
     .search_weather_container .search_welcome_btn{
@@ -425,13 +422,12 @@ body {
         width: 400px;
         height: 38px;
         font-size: 22.5px;
-        padding-left: 100px;
+        padding-left: 25px;
         position: absolute;
     }
 
-    .search_weather_container input:placeholder-shown{
+    .search_weather_container input::placeholder{
         font-size: 22.5px;
-        padding-left: 100px;
     }
 
     .search_weather_container .search_welcome_btn{
@@ -503,13 +499,12 @@ body {
         width: 350px;
         height: 38px;
         font-size: 22.5px;
-        padding-left: 100px;
+        padding-left: 50px;
         position: absolute;
     }
 
-    .search_weather_container input:placeholder-shown{
+    .search_weather_container input::placeholder{
         font-size: 22.5px;
-        padding-left: 20px;
     }
 
     .search_weather_container .search_welcome_btn{

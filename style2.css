@@ -1,14 +1,10 @@
-/* @import "https://unpkg.com/open-props";
-@import "https://unpkg.com/open-props/normalize.min.css"; */
-
 :root {
     --primary_background: #4169E1;
     --secondary_background: #0a1788;
     --font_color: #ffff;
+    --placeholder: #383838;
     --h1_computer_size: 200px;
     --h2_computer_size: 92px;
-    --p_small_computer_size: 
-
 }
 
 * {
@@ -167,7 +163,7 @@ body {
     border-radius: 20px;
     font-size: 28px;
     color: rgba(255, 255, 255, 0.75);;
-    padding-left: 350px;
+    padding-left: 25px;
     border: none;
     animation: searchInputAnimation;
     animation-duration: 1000ms;
@@ -192,11 +188,9 @@ body {
     }
 }
 
-.menu_search search_input:placeholder-shown{
+.menu_search .search_input::placeholder{
     font-size: 28px;
-    color: rgba(255, 255, 255, 0.75);
-    padding-left: 400px;
-
+    color: var(--placeholder);
 }
 
 .menu_search input:focus {
@@ -211,7 +205,7 @@ body {
     width: 72.5px;
     height: 65%;
     position: relative;
-    right: 100px;
+    right: 90px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -266,10 +260,12 @@ body {
 
 .place_date_container {
     width: 100%;
+    transition: all ease-in-out 0.6s;
 }
 
 .place_date_container.inactive {
     opacity: 0;
+    transition: all ease-in-out 0s;
 }
 
 .first_part_container .place_date_container h3 {
@@ -325,10 +321,12 @@ body {
 .extended_weather {
     width: 100%;
     height: 40%;
+    transition: all ease-in-out 0.6s;
 }
 
 .extended_weather.inactive {
     opacity: 0;
+    transition: all ease-in-out 0s;
 }
 
 table {
@@ -396,6 +394,7 @@ table tr td img {
 .forecast_btn.inactive {
     display: none !important;
     opacity: 0;
+    transition: all ease-in-out 0s;
 }
 
 .forecast_btn p {
@@ -545,13 +544,19 @@ table tr td img {
 
     .menu_search .search_input {
         height: 55%;
-        padding-left: 120px;
+        padding-left: 25px;
         font-size: 20px;
+    }
+
+    .menu_search .search_input::placeholder {
+        font-size: 20px;
+        color: var(--placeholder);
     }
     
     .menu_search .search_btn_for_input{
         width: 90px;
         height: 40%;
+        right: 80px;
     }
     
     .menu_search .search_btn_for_input img {
@@ -821,14 +826,19 @@ table tr td img {
 
     .menu_search .search_input {
         height: 45%;
-        padding-left: 120px;
+        padding-left: 15px;
         font-size: 15px;
+    }
+
+    .menu_search .search_input::placeholder {
+        font-size: 15px;
+        color: var(--placeholder);
     }
     
     .menu_search .search_btn_for_input{
         width: 90px;
         height: 35%;
-        right: 50px;
+        right: 55px;
     }
     
     .menu_search .search_btn_for_input img {

@@ -1,7 +1,6 @@
 //WELCOME SITE
 const api_key = '7f2a917cf09d4b597fd6911118bc94bb';
 let welcomeInputValue = localStorage.getItem('welcomeInputValue');
-console.log(welcomeInputValue);
 getDayForecast(welcomeInputValue);
 getHourForecast(welcomeInputValue);
 
@@ -51,10 +50,12 @@ function displayForecast() {
 
 function hideForecast() {
     if(window.innerWidth > 720) {
-        FORECAST_CONTAINER.classList.add('inactive');
-        PLACE_DATE_CONTAINER.classList.remove('inactive');
-        EXTENDED_WEATHER.classList.remove('inactive');
-        FORECAST_BTN.classList.remove('inactive');   
+        FORECAST_CONTAINER.classList.add('inactive'); 
+        setTimeout(() => {
+            PLACE_DATE_CONTAINER.classList.remove('inactive');
+            EXTENDED_WEATHER.classList.remove('inactive');
+            FORECAST_BTN.classList.remove('inactive');   
+        }, 600)
     }
     else {
         FORECAST_CONTAINER.classList.add('inactive');
@@ -84,15 +85,16 @@ SEARCH_INPUT_INACTIVE.addEventListener('keypress', (event) => {
 
 //BACKGROUND
 
-function changeBackground(icon_desc) {
+function changeBackground(icon_main) {
     let date = new Date();
     let hour = date.getHours();
+    console.log(icon_main);
 
     if (hour > 6 && hour < 18) {
-        document.body.style.backgroundColor = `url('images/bg_imgs/${icon_desc}.jpg')`
+        document.body.style.backgroundImage = `url('images/bg_imgs/${icon_main}.jpg')`
     }
     else {
-        document.body.style.backgroundImage = `url('images/bg_imgs/${icon_desc}night.jpg')`;
+        document.body.style.backgroundImage = `url('images/bg_imgs/${icon_main}night.jpg')`;
     }
 }
 
@@ -127,7 +129,8 @@ async function getDayForecast(cityName) {
 
             let wind = data.wind;
             let clouds = data.clouds
-        
+
+            let icon_main = weather[0].main;
             let icon_picture = weather[0].icon;
             let icon_desc = weather[0].description; 
             let deegres_celsius = Math.round(main.temp - 273.15);
@@ -137,11 +140,11 @@ async function getDayForecast(cityName) {
             let wind_speed = Math.round(wind.speed);
             let humidity = main.humidity;
             let cloud = Math.round(clouds.all);
-
+            
             displayPlaceDate(city_weather);
             displayBasicWeather(icon_picture, icon_desc, deegres_celsius);
             displayExtendWeather(feels_like_temp, min_temp, max_temp, wind_speed, humidity, cloud);
-            changeBackground(icon_desc);
+            changeBackground(icon_main);
 
         } else {
             // Handle errors
@@ -157,7 +160,6 @@ async function getDayForecast(cityName) {
 async function getHourForecast(cityName) {
     let res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${api_key}`)
     let data = await res.json();
-    console.log(data);
     let text = '';
        
         for(let i = 0; i < 5; i++) {
@@ -176,7 +178,7 @@ async function getHourForecast(cityName) {
                             <p>-6 C / -10 C</p>
                         </span>
                         <span class="rain_container">
-                            <img src="images/extended_icons/rain.png" alt="">
+                            <img src="images/extended_icons/humidity.png" alt="">
                             <p>90%</p>
                         </span>
                     </div>`                
@@ -262,7 +264,7 @@ function displayExtendWeather(feels_like_temp, min_temp, max_temp, wind_speed, h
                             <p class="max_temp">${max_temp}°</p>
                         </td>
                     <td>
-                            <img src="images/extended_icons/rain.png" alt="">
+                            <img src="images/extended_icons/humidity.png" alt="">
                             <p class="rain">${humidity}%</p>
                     </td>
                     </tr>
@@ -294,7 +296,7 @@ function displayExtendWeather(feels_like_temp, min_temp, max_temp, wind_speed, h
                 </div>
                 <div class="different_stats_mobile_container">
                     <div class="rain_mobile_container">
-                        <img src="images/extended_icons/rain.png" alt="">
+                        <img src="images/extended_icons/humidity.png" alt="">
                         <p class="rain">${humidity}%</p>
                     </div>
                     <div class="cloud_mobile_container">
